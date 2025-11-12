@@ -42,21 +42,29 @@
   }
 
   /* ===== 카드(.char) ===== */
-  .char{
-    position: relative;
-    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
-    width: 100%;
-    max-width: 120px;
-    height: 150px;
-    padding: 10px 8px;
-    background: transparent;
-    border-radius: 16px;
-    cursor: pointer;
-    user-select: none;
-    min-width: 0; /* grid 자식 줄깨짐 방지 핵심 */
-    box-shadow: none; /* 기본 그림자 제거 */
-    transition: transform .2s;
-  }
+  .char {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  max-width: 120px;
+  /* height: 150px;  ← ❌ 이 줄 삭제 */
+  min-height: 150px; /* ✅ 기본 높이만 지정하고 자동 확장되게 */
+
+  padding: 10px 8px;
+  background: transparent;
+  border-radius: 16px;
+
+  cursor: pointer;
+  user-select: none;
+  min-width: 0;
+  box-shadow: none;
+  transition: transform .2s;
+}
+
   /* 모바일에선 hover 효과 미적용 */
   @media (hover:hover) and (pointer:fine){
     .char:hover { transform: scale(1.05); box-shadow: 0 6px 14px rgba(0,0,0,0.08); }
@@ -84,12 +92,20 @@
     max-width: 100%;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   }
-  .title{
-    font-size: .8em; color: #999; margin-top: 2px; line-height: 1.2;
-    width: 100%;
-    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-    overflow: hidden; text-overflow: ellipsis; height: 2.4em;
-  }
+  .title {
+  font-size: .8em;
+  color: #999;
+  margin-top: 2px;
+  line-height: 1.3; /* ✅ 살짝 늘려줌 */
+  width: 100%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.6em; /* ✅ 두 줄 여유 */
+}
+
 
   /* ===== 떠오르는 단어/하트 (카드 내부 절대 배치) ===== */
   .word, .heart {
