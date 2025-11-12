@@ -441,6 +441,22 @@
 
   <footer>Built by <b>Sotteok</b> · Click to Love 💘</footer>
 
+<div id="updateDate" style="font-size:13px; color:#999; margin-bottom:30px;"></div>
+
+<script>
+(function(){
+  const el = document.getElementById('updateDate');
+  const raw = new Date(document.lastModified);
+  const y = raw.getFullYear();
+  const m = String(raw.getMonth()+1).padStart(2,'0');
+  const d = String(raw.getDate()).padStart(2,'0');
+  const hh = String(raw.getHours()).padStart(2,'0');
+  const mm = String(raw.getMinutes()).padStart(2,'0');
+  el.textContent = `Last updated · ${y}.${m}.${d} ${hh}:${mm}`;
+})();
+</script>
+
+
   <audio id="clickSound" src="click.wav"></audio>
 
   <!-- ===== 정렬/렌더/이펙트 스크립트 ===== -->
