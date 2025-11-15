@@ -23,18 +23,18 @@
   /* ===== 스테이지 그리드 ===== */
   #stage {
     display: grid;
-    gap: 20px;
+    gap: 22px;
     width: min(92vw, 1200px);
     margin: 0 auto;
     justify-content: center; /* PC에서 가운데 정렬 */
   }
   /* PC: 8열 */
   @media (min-width:1200px){
-    #stage { grid-template-columns: repeat(8, 1fr); gap: 22px; }
+    #stage { grid-template-columns: repeat(8, 1fr); gap: 16px; }
   }
   /* 태블릿: 6열 */
   @media (min-width:769px) and (max-width:1199px){
-    #stage { grid-template-columns: repeat(6, 1fr); gap: 20px; }
+    #stage { grid-template-columns: repeat(6, 1fr); gap: 16px; }
   }
   /* 모바일: 2열(고정폭 140px) */
   @media (max-width:768px){
